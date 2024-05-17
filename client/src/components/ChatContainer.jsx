@@ -12,8 +12,8 @@ const ChatContainer = ({ currentChat, socket }) => {
     const scrollRef = useRef();
     const [messages, setMessages] = useState([]);
     const [arrivalMessage, setArrivalMessage] = useState(null);
-    console.log(user);
-    console.log(currentChat);
+    // console.log(user);
+    // console.log(currentChat);
     // Axios call for fetching messages between two users 
     const fetchMessages = async () => {
         if (currentChat) {
@@ -21,7 +21,7 @@ const ChatContainer = ({ currentChat, socket }) => {
                 from: user._id,
                 to: currentChat._id,
             });
-            console.log(result);
+            //console.log(result);
             setMessages(result.data);
         }
     }
@@ -41,8 +41,9 @@ const ChatContainer = ({ currentChat, socket }) => {
         });
         const msgs = [...messages];
         msgs.push({ fromSelf: true, message: msg });
-        setMessages(msgs);
-        console.log(result);
+        //setMessages(msgs);
+        // console.log(result);
+        setMessages(prevMessages => [...prevMessages, { fromSelf: true, message: msg }]);
         fetchMessages();
     }
     useEffect(() => {
