@@ -31,8 +31,8 @@ const server = app.listen(process.env.PORT, () => {
 
 const io = new Server(server, {
   cors: {
-    //origin: "http://localhost:3000",
-    origin: "https://chichat-fe.onrender.com",
+    origin: "http://localhost:3000",
+    //origin: "https://chichat-fe.onrender.com",
     credentials: true,
   },
 });
@@ -41,14 +41,30 @@ global.onlineUsers = new Map();
 
 io.on("connection", (socket) => {
   global.chatSocket = socket;
+  console.log("New socket connection:", socket.id);
   socket.on("add-user", (userId) => {
+    console.log(`User ${userId} connected with socket ID ${socket.id}`);
     onlineUsers.set(userId, socket.id);
   });
 
   socket.on("send-msg", (data) => {
     const sendUserSocket = onlineUsers.get(data.to);
-    if(sendUserSocket){
+    console.log(`Message from ${data.from} to ${data.to}: ${data.message}`);
+    if (sendUserSocket) {
+      console.log(
+        `Sending message to user ${data.to} via socket ${sendUserSocket}`
+      );
       socket.to(sendUserSocket).emit("msg-receive", data.message);
+    }
+  });
+
+  socket.on("disconnect", () => {
+    console.log(`Socket ${socket.id} disconnected`);
+    for (let [userId, socketId] of onlineUsers.entries()) {
+      if (socketId === socket.id) {
+        onlineUsers.delete(userId);
+        break;
+      }
     }
   });
 });
