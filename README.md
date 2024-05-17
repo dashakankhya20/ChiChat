@@ -8,15 +8,16 @@ ChiChat is a web application created using the MERN stack. This chat application
 # Screenshots 
 
 - Registration Page 
-
+![image](https://github.com/dashakankhya20/ChiChat/assets/144155014/136b3107-2d26-4b35-b67a-e8bf8712fa0d)
 
 - Login Page 
-
+![image](https://github.com/dashakankhya20/ChiChat/assets/144155014/0bff7d9e-df92-414d-b9e2-be0405f5e4e2)
 
 - Welcome Page 
-
+![image](https://github.com/dashakankhya20/ChiChat/assets/144155014/e377a85b-58cf-45f6-884d-e9f65b81bde2)
 
 - Chatting with another registered user 
+![image](https://github.com/dashakankhya20/ChiChat/assets/144155014/ee025508-aa5d-4777-ac63-d502bcba0a41)
 
 # Installation
 
