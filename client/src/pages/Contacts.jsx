@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import { MyContext } from "../MyContext";
 import dummyImage from "../utils/images/dummy-image.png";
-import SearchUser from "./SearchUser";
 
 const Contacts = ({ contacts, changeChat }) => {
     const { user } = useContext(MyContext);
@@ -23,7 +22,6 @@ const Contacts = ({ contacts, changeChat }) => {
                     <p>{user.username}</p>
                 </div>
             </div>
-            <SearchUser />
             <div className="contact-container">
                 {contacts.map((contact, index) => (
                     <div

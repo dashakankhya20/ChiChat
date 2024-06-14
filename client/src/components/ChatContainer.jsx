@@ -140,6 +140,24 @@ height:100%;
     flex-direction:column;
     gap:1rem;
     overflow:auto;
+
+    &::-webkit-scrollbar {
+        width: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #ffffff39;
+        border-radius: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: #555;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: black;
+        border-radius: 0.5rem;
+    }
     .message {
         display:flex;
         align-items:center;

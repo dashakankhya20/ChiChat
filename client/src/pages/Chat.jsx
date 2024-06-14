@@ -76,12 +76,12 @@ const Container = styled.div`
     width: 100vw;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     color: white;
     .contacts {
         width: 24vw;
-        height: auto;
+        height: 90vh;
         overflow-y: auto;
         background-color: black;
         margin: 1rem;
@@ -97,6 +97,7 @@ const Container = styled.div`
     }
     .chat {
         width: 76vw;
+        height:90vh;
         background-color: black;
         margin: 1rem;
         border-radius: 1rem;
